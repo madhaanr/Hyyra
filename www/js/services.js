@@ -1,12 +1,33 @@
-Hyy.service('HyyraService', function ($http) {
-    var o = "http://messi.hyyravintolat.fi/publicapi/restaurants";
-    this.getData = function (callbackFunc) {
+Hyy.service('cafeApiService', function ($http) {
+    var basePath = "http://messi.hyyravintolat.fi/publicapi/";
+    this.getRestaurants = function (callback) {
         $http({
             method: 'GET',
-            url: o,
-            params: 'limit=10'
+            url: basePath+"restaurants",
         }).success(function (data) {
-            callbackFunc(data);
+            callback(data);
+        }).error(function () {
+            alert("error");
+        });
+    }
+    
+    this.getRestaurant = function(id, callback) {
+        $http({
+            method: 'GET',
+            url: basePath+"restaurant/"+id,
+        }).success(function (data) {
+            callback(data);
+        }).error(function () {
+            alert("error");
+        });
+    }
+    
+    this.getRestaurantsInArea = function(id, callback) {
+        $http({
+            method: 'GET',
+            url: basePath+"restaurant/"+id,
+        }).success(function (data) {
+            callback(data);
         }).error(function () {
             alert("error");
         });

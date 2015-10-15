@@ -1,10 +1,9 @@
 <ion-view view-title="Restaurants">
   <ion-content>
     <ion-list>
-    <ion-toggle>
-        {{message}}
-        {{restaurants}}
-    </ion-toggle>
+       <ion-item ng-repeat="restaurant in restaurants.data | orderBy:['areacode','name']">
+          {{restaurant.name}} {{restaurant.areacode}}
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>
