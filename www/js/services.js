@@ -11,7 +11,8 @@ Hyy.service('cafeApiService', function ($http) {
         });
     }
     
-    this.getRestaurant = function(id, callback) {
+    this.getRestaurant = function(callback,id) {
+        id=11;
         $http({
             method: 'GET',
             url: basePath+"restaurant/"+id,
@@ -22,10 +23,11 @@ Hyy.service('cafeApiService', function ($http) {
         });
     }
     
-    this.getRestaurantsInArea = function(id, callback) {
+    this.getRestaurantsInArea = function(callback,id) {
+        id=1;
         $http({
             method: 'GET',
-            url: basePath+"restaurant/"+id,
+            url: basePath+"restaurants/"+id,
         }).success(function (data) {
             callback(data);
         }).error(function () {

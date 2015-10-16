@@ -21,7 +21,17 @@ Hyy.run(function ($ionicPlatform) {
     })*/
     .state('Restaurants', {
       url: '/',
-      controller: 'cafeApiController',
+      controller: 'RestaurantsController',
       templateUrl: 'templates/restaurants.html'
-    });
+    })
+    .state('Restaurant', {
+      url: '/restaurant',
+      controller: 'RestaurantController',
+      templateUrl: 'templates/restaurant.html'
+    })
+    .state('RestaurantsInArea', {
+      url: '/restaurantsInArea',
+      controller: 'RestaurantsInAreaController',
+      templateUrl: 'templates/areasRestaurant.html'
+    })
 });
