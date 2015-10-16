@@ -14,12 +14,13 @@ Hyy.run(function ($ionicPlatform) {
 .config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/')
   $stateProvider
-    .state('home', {
+    /*.state('home', {
       url:'/',
       controller: 'HyyraController',
       templateUrl: 'index.html'
-    })
-    .state('restaurants', {
+    })*/
+    .state('Restaurants', {
+      url: '/',
       controller: 'cafeApiController',
       templateUrl: 'templates/restaurants.html'
     });
