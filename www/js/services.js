@@ -12,12 +12,12 @@ Hyy.factory('cafeApiService', function ($http,$q) {
             return dfd.promise;
 		},
 		getRestaurant: function(id){
-            var df=$q.defer();
+            var dfd=$q.defer();
 			$http.get(basePath+'restaurant/'+id).then(function(response){
 				restaurant = response.data;
-				df.resolve(restaurant);
+				dfd.resolve(restaurant);
 			});
-            return df.promise;
+            return dfd.promise;
 		}
 	}
     /*

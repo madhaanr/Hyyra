@@ -26,7 +26,7 @@ Hyy.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('restaurant', {
       url: '/restaurant/:restaurantId',
-      controller: 'SingleRestaurantController',
+      controller: 'RestaurantController',
       templateUrl: 'templates/restaurant.html',
       resolve: {
         restaurant: function ($stateParams, cafeApiService) {
