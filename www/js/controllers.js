@@ -1,18 +1,15 @@
-Hyy.controller('HyyraController', function ($scope) {
-  $scope.testing = "testing";
+Hyy.controller('RestaurantsController', function ($scope, restaurants) {
+  //cafeApiService.getRestaurants(function (data) {
+    $scope.restaurants = restaurants;
+  //});
 });
-Hyy.controller('RestaurantsController', function ($scope, cafeApiService) {
-  cafeApiService.getRestaurants(function (data) {
-    $scope.restaurants = data;
-  });
+Hyy.controller('RestaurantController', function ($scope, restaurant) {
+  //cafeApiService.getRestaurant(function (data,restaurantId) {
+    $scope.restaurant = restaurant;
+  //});
 });
-Hyy.controller('RestaurantController', function($scope, cafeApiService) {
-  cafeApiService.getRestaurant(function(data) {
-    $scope.restaurant = data;
-  });
-});
-Hyy.controller('RestaurantsInAreaController', function($scope, cafeApiService) {
-  cafeApiService.getRestaurantsInArea(function(data) {
+Hyy.controller('RestaurantsInAreaController', function ($scope, cafeApiService) {
+  cafeApiService.getRestaurantsInArea(function (data,id) {
     $scope.restaurantsInArea = data;
   });
 });

@@ -1,8 +1,8 @@
-<ion-view view-title="Restaurant">
+<ion-view view-title="{{restaurant.information.restaurant}}">
   <ion-content>
     <ion-list>
        <ion-item ng-repeat="restaurant in restaurant.data">
-          {{restaurant.date}} {{restaurant.data[2].name}}
+          {{restaurant.date}} <span ng-repeat="food in restaurant.data">{{food.name}}<br></span>
       </ion-item>
     </ion-list>
   </ion-content>

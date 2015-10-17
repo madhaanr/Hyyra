@@ -11,27 +11,32 @@ Hyy.run(function ($ionicPlatform) {
     }
   });
 })
-.config(function ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/')
-  $stateProvider
-    /*.state('home', {
-      url:'/',
-      controller: 'HyyraController',
-      templateUrl: 'index.html'
-    })*/
-    .state('Restaurants', {
-      url: '/',
-      controller: 'RestaurantsController',
-      templateUrl: 'templates/restaurants.html'
-    })
-    .state('Restaurant', {
-      url: '/restaurant',
-      controller: 'RestaurantController',
-      templateUrl: 'templates/restaurant.html'
-    })
-    .state('RestaurantsInArea', {
-      url: '/restaurantsInArea',
-      controller: 'RestaurantsInAreaController',
-      templateUrl: 'templates/areasRestaurant.html'
-    })
-});
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/')
+    $stateProvider
+      .state('restaurants', {
+        url: '/',
+        controller: 'RestaurantsController',
+        templateUrl: 'templates/restaurants.html',
+        resolve: {
+          restaurants: function (cafeApiService,data) {
+            return cafeApiService.getRestaurants(data)
+          }
+        }
+      })
+      .state('restaurant', {
+        url: '/restaurant/:restaurantId',
+        controller: 'RestaurantController',
+        templateUrl: 'templates/restaurant.html',
+        resolve: {
+          restaurant: function ($stateParams, cafeApiService,data) {
+            return cafeApiService.getRestaurant(data,$stateParams.restaurantId)
+          }
+        }
+      })
+      .state('RestaurantsInArea', {
+        url: '/restaurantsInArea',
+        controller: 'RestaurantsInAreaController',
+        templateUrl: 'templates/areasRestaurant.html'
+      })
+  });
