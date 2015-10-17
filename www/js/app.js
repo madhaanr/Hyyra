@@ -19,8 +19,8 @@ Hyy.run(function ($ionicPlatform) {
         controller: 'RestaurantsController',
         templateUrl: 'templates/restaurants.html',
         resolve: {
-          restaurants: function (cafeApiService,data) {
-            return cafeApiService.getRestaurants(data)
+          restaurants: function (cafeApiService) {
+            return cafeApiService.getRestaurants()
           }
         }
       })
@@ -29,8 +29,8 @@ Hyy.run(function ($ionicPlatform) {
         controller: 'RestaurantController',
         templateUrl: 'templates/restaurant.html',
         resolve: {
-          restaurant: function ($stateParams, cafeApiService,data) {
-            return cafeApiService.getRestaurant(data,$stateParams.restaurantId)
+          restaurant: function ($stateParams, cafeApiService) {
+            return cafeApiService.getRestaurant($stateParams.restaurantId)
           }
         }
       })
