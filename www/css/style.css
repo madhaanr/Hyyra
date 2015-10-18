@@ -17,7 +17,10 @@
     vertical-align: left;
 }
 .restaurant label button {
-    min-width:10em;
-    word-wrap: break-word;
-    max-width: 11em;
+    min-width:8em;
+    max-width: 12em;
+    background-color: lightblue;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
 }
