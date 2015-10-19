@@ -1,3 +1,4 @@
+"use strict";
 var Hyy = angular.module('Hyyra', ['ionic']);
 Hyy.run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {

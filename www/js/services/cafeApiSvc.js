@@ -1,3 +1,4 @@
+"use strict";
 Hyy.factory('cafeApiService', function ($http,$q) {
     var basePath = "http://messi.hyyravintolat.fi/publicapi/";
     var restaurants = {};
