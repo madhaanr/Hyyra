@@ -1,5 +1,11 @@
-"use strict";
-Hyy.controller('RestaurantsController', function ($scope, restaurants) {
-    $scope.restaurants = restaurants;
-    $scope.checkBoxModel = [];
-});
+(function () {
+    "use strict";
+    angular.module('Hyyra').controller('RestaurantsController', RestaurantsController);
+    
+    RestaurantsController.$inject=['restaurants','$scope'];
+    
+    function RestaurantsController(restaurants, $scope) {
+        $scope.restaurants=restaurants;
+        $scope.checkboxModel = {};
+    }
+})();

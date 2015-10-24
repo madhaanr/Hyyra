@@ -1,4 +1,4 @@
 "use strict";
-Hyy.factory('storageService', function ($http,$q) {
+Hyy.factory('storageService', function ($q) {
 	
 });
