@@ -1,4 +1,3 @@
-"use strict";
-Hyy.factory('storageService', function ($q) {
-	
+angular.module('Hyyra').factory('storageService', function ($q) {
+	"use strict";	
 });

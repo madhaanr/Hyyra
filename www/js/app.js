@@ -1,6 +1,7 @@
 (function () {
   "use strict";
-  angular.module('Hyyra', ['ionic'])
+  angular
+    .module('Hyyra', ['ionic', 'RestaurantsController', 'RestaurantController', 'cafeApiService'])
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -19,7 +20,7 @@
         .state('restaurants', {
           url: '/',
           controller: 'RestaurantsController',
-     //     controllerAs: 'vm',
+          //     controllerAs: 'vm',
           templateUrl: 'templates/restaurants.html',
           resolve: {
             restaurants: function (cafeApiService) {
@@ -30,7 +31,7 @@
         .state('restaurant', {
           url: '/restaurant/:restaurantId',
           controller: 'RestaurantController',
-           //     controllerAs: 'vm',
+          //     controllerAs: 'vm',
           templateUrl: 'templates/restaurant.html',
           resolve: {
             restaurant: function ($stateParams, cafeApiService) {
