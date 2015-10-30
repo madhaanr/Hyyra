@@ -3,32 +3,24 @@
 	angular
 		.module('Hyyra')
 		.factory('cafeApiService', cafeApiService);
-		
-		cafeApiService.$inject = ['$http','$q'];
-			
-		function cafeApiService($http,$q) {	
-			var basePath = "http://messi.hyyravintolat.fi/publicapi/";
-			var restaurants = {};
-			var restaurant = {};
-			return {
-				getRestaurants: getRestaurants,
-				getRestaurant: getRestaurant
-			}
-			function getRestaurants() {
-					var dfd = $q.defer();
-					$http.get(basePath + 'restaurants').then(function (response) {
-						restaurants = response.data;
-						dfd.resolve(restaurants);
-					});
-					return dfd.promise;	
-			}
-			function getRestaurant(id) {
-					var dfd = $q.defer();
-					$http.get(basePath + 'restaurant/' + id).then(function (response) {
-						restaurant = response.data;
-						dfd.resolve(restaurant);
-					});
-					return dfd.promise;
-			}
+
+	cafeApiService.$inject = ['$http'];
+
+	function cafeApiService($http) {
+		var basePath = "http://messi.hyyravintolat.fi/publicapi/";
+		return {
+			getRestaurants: getRestaurants,
+			getRestaurant: getRestaurant
+		}
+		function getRestaurants() {
+			return $http.get(basePath + 'restaurants').then(function (response) {
+				return response.data;
+			});
 		};
+		function getRestaurant(id) {
+			return $http.get(basePath + 'restaurant/' + id).then(function (response) {
+				return response.data;
+			});
+		};
+	};
 })();
