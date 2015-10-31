@@ -4,10 +4,9 @@
         .module('Hyyra')
         .controller('SelectedRestaurantsController', SelectedRestaurantsController);
 
-    SelectedRestaurantsController.$inject = ['selectedRestaurants', '$scope'];
+    SelectedRestaurantsController.$inject = ['$localStorage', '$scope','selectedRestaurants'];
 
-    function SelectedRestaurantsController(selectedRestaurants, $scope) {
+    function SelectedRestaurantsController($localStorage, $scope, selectedRestaurants) {
         $scope.selectedRestaurants = selectedRestaurants;
-        $scope.checkboxModel = {};
     }
 })();

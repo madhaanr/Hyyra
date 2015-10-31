@@ -6,7 +6,7 @@
           <label for="showRestaurant" ui-sref='restaurant({restaurantId:restaurant.id})'>
             <span id="showRestaurant"><button>{{restaurant.name}}</button></span>
           </label>
-          <input type="checkbox" ng-model="checkboxModel[restaurant.id]" />
+          <input type="checkbox" ng-model="$storage.restaurants[restaurant.id]" />
         </div>
       </ion-item>
     </ion-list>

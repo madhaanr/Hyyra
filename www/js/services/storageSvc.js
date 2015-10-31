@@ -4,9 +4,22 @@
 		.module('Hyyra')
 		.factory('storageService', storageService); 
 	
-	storageService.$inject = ['ngStorage'];
+	storageService.$inject = ['$localStorage'];
 	
-	function storageService(ngStorage) {
+	function storageService($localStorage) {
+		
+		return {
+			getStoredRestaurants: getStoredRestaurants,
+			storeRestaurants: storeRestaurants
+		}
+		
+		function getStoredRestaurants() {
+			return $localStorage;
+		}
+		
+		function storeRestaurants(selectedRestaurants) {
+	 	
+		}
 		
 	}
 });

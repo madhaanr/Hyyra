@@ -4,10 +4,10 @@
         .module('Hyyra')
         .controller('RestaurantsController', RestaurantsController);
 
-    RestaurantsController.$inject = ['restaurants', '$scope'];
+    RestaurantsController.$inject = ['$scope','$localStorage','restaurants'];
 
-    function RestaurantsController(restaurants, $scope) {
+    function RestaurantsController($scope,$localStorage,restaurants) {
         $scope.restaurants = restaurants;
-        $scope.checkboxModel = {};
+        $scope.$storage = $localStorage;
     }
 })();
