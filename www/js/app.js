@@ -39,5 +39,16 @@
             }
           }
         })
+        .state('selectedRestaurants', {
+          url: '/restaurant/selected',
+          controller: 'SelectedRestaurantsController',
+          //     controllerAs: 'vm',
+          templateUrl: 'templates/selectedRestaurants.html',
+          resolve: {
+            restaurant: function (cafeApiService,restaurantIds) {
+              return cafeApiService.getSelectedRestaurants(restaurantIds);
+            }
+          }
+        })
     });
 })();
