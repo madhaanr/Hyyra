@@ -1,5 +1,5 @@
 (function () {
-  "use strict";
+  'use strict';
   angular
     .module('Hyyra', ['ionic','ngStorage'])
     .run(function ($ionicPlatform) {
