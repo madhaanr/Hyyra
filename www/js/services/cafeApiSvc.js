@@ -30,11 +30,12 @@
 		function getSelectedRestaurants() {
 			var paths = [];
 			for (var id in storageService.storedRestaurants().restaurant) {
-				console.log(id);
-				paths.push($http.get(basePath+'restaurant/'+id));
+				if(storageService.storedRestaurants().restaurant[id]) {
+					paths.push($http.get(basePath+'restaurant/'+id));
+				}
 			}
 			return $q.all(paths).then(function(response) {
-				return response;
+				return Promise.resolve(response);
 			});
 		}
 	};
