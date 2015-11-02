@@ -2,24 +2,18 @@
 	'use strict';
 	angular
 		.module('Hyyra')
-		.factory('storageService', storageService); 
-	
+		.factory('storageService', storageService);
+
 	storageService.$inject = ['$localStorage'];
-	
+
 	function storageService($localStorage) {
-		
+
 		return {
-			getStoredRestaurants: getStoredRestaurants,
-			storeRestaurants: storeRestaurants
+			storedRestaurants: storedRestaurants
 		}
-		
-		function getStoredRestaurants() {
+
+		function storedRestaurants() {
 			return $localStorage;
 		}
-		
-		function storeRestaurants(selectedRestaurants) {
-	 	
-		}
-		
 	}
-});
+})();

@@ -25,7 +25,10 @@
           resolve: {
             restaurants: function (cafeApiService) {
               return cafeApiService.getRestaurants();
-            }
+            }/*,
+            storage: function(storageService) {
+              return storageService.getStoredRestaurants();
+            }*/
           }
         })
         .state('restaurant', {

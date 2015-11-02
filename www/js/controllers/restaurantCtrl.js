@@ -4,10 +4,9 @@
         .module('Hyyra')
         .controller('RestaurantController', RestaurantController);
 
-    RestaurantController.$inject = ['restaurant','$scope','$ionicLoading'];
+    RestaurantController.$inject = ['$scope','$ionicLoading','restaurant'];
 
-    function RestaurantController(restaurant,$scope) {
-        //var vm=this;
+    function RestaurantController($scope,$ionicLoading,restaurant) {
         $scope.restaurant = restaurant;
     }
 })();
