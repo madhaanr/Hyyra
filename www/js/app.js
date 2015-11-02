@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   angular
-    .module('Hyyra', ['ionic','ngStorage'])
+    .module('Hyyra', ['ionic', 'ngStorage'])
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -20,21 +20,16 @@
         .state('restaurants', {
           url: '/',
           controller: 'RestaurantsController',
-          //     controllerAs: 'vm',
           templateUrl: 'templates/restaurants.html',
           resolve: {
             restaurants: function (cafeApiService) {
               return cafeApiService.getRestaurants();
-            }/*,
-            storage: function(storageService) {
-              return storageService.getStoredRestaurants();
-            }*/
+            }
           }
         })
         .state('restaurant', {
           url: '/restaurant/:restaurantId',
           controller: 'RestaurantController',
-          //     controllerAs: 'vm',
           templateUrl: 'templates/restaurant.html',
           resolve: {
             restaurant: function ($stateParams, cafeApiService) {
@@ -43,15 +38,9 @@
           }
         })
         .state('selectedRestaurants', {
-          url: '/restaurant/selected',
+          url: '/restaurants/selected',
           controller: 'SelectedRestaurantsController',
-          //     controllerAs: 'vm',
-          templateUrl: 'templates/selectedRestaurants.html',
-          resolve: {
-            restaurant: function (cafeApiService,restaurantIds) {
-              return cafeApiService.getSelectedRestaurants(restaurantIds);
-            }
-          }
+          templateUrl: 'templates/selectedRestaurants.html'
         })
     });
 })();

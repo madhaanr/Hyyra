@@ -4,9 +4,10 @@
         .module('Hyyra')
         .controller('SelectedRestaurantsController', SelectedRestaurantsController);
 
-    SelectedRestaurantsController.$inject = ['$localStorage', '$scope','selectedRestaurants'];
+    SelectedRestaurantsController.$inject = ['$scope','cafeApiService'];
 
-    function SelectedRestaurantsController($localStorage, $scope, selectedRestaurants) {
-        $scope.selectedRestaurants = selectedRestaurants;
+    function SelectedRestaurantsController($scope,cafeApiService) {
+         $scope.selected=cafeApiService.getSelectedRestaurants();
+         console.log($scope.selected);
     }
 })();

@@ -4,9 +4,9 @@
 		.module('Hyyra')
 		.factory('cafeApiService', cafeApiService);
 
-	cafeApiService.$inject = ['$http','$q'];
+	cafeApiService.$inject = ['$http','$q','storageService'];
 
-	function cafeApiService($http) {
+	function cafeApiService($http,$q,storageService) {
 		var basePath = "http://messi.hyyravintolat.fi/publicapi/";
 		
 		return {
@@ -27,14 +27,14 @@
 			});
 		};
 		
-		function getSelectedRestaurants(restaurantIds,$q) {
+		function getSelectedRestaurants() {
 			var paths = [];
-			restaurantIds.forEach(function(id) {
+			for (var id in storageService.storedRestaurants().restaurant) {
+				console.log(id);
 				paths.push($http.get(basePath+'restaurant/'+id));
-			});
-			
-			$q.all(paths).then(function(response) {
-				return response.data;
+			}
+			return $q.all(paths).then(function(response) {
+				return response;
 			});
 		}
 	};

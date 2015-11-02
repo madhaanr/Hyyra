@@ -1,6 +1,7 @@
 <ion-view view-title="Ravintolat">
   <ion-content>
     <ion-list>
+       <button class="button button-clear pull-center" ui-sref="selectedRestaurants">Hae</button>
       <ion-item ng-repeat="restaurant in restaurants.data | orderBy:['areacode','name']">
         <div class="restaurant">
           <label for="showRestaurant" ui-sref='restaurant({restaurantId:restaurant.id})'>
