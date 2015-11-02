@@ -7,7 +7,12 @@
     SelectedRestaurantsController.$inject = ['$scope','cafeApiService'];
 
     function SelectedRestaurantsController($scope,cafeApiService) {
-         $scope.selected=cafeApiService.getSelectedRestaurants();
+         var promise=cafeApiService.getSelectedRestaurants();
          console.log($scope.selected);
+         promise.then(function(v) {
+            console.log(v);
+            $scope.selected=v;
+         });
+         //console.log($scope.selected.data);
     }
 })();
