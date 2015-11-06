@@ -8,11 +8,9 @@
 
     function SelectedRestaurantsController($scope,cafeApiService) {
          var promise=cafeApiService.getSelectedRestaurants();
-         console.log($scope.selected);
-         promise.then(function(v) {
-            console.log(v);
-            $scope.selected=v;
+         promise.then(function(restaurants) {
+            console.log(restaurants);
+            $scope.restaurants=restaurants;
          });
-         //console.log($scope.selected.data);
     }
 })();

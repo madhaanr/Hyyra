@@ -1,8 +1,10 @@
 <ion-view view-title="Valitut ravintola">
   <ion-content>
     <ion-list>
-       <ion-item ng-repeat="restaurant in restaurantsInArea.data">
-          {{restaurant.name}}
+       <ion-item ng-repeat="restaurant in restaurants | orderBy:['data.information.restaurant']">
+          {{restaurant.data.information.restaurant}}<br>
+          {{restaurant.data.data.date}} <br>
+          <span ng-repeat="food in restaurant.data.data">{{food.name}}<br></span>
       </ion-item>
     </ion-list>
   </ion-content>
