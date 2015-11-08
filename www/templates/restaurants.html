@@ -4,10 +4,10 @@
       <button class="button button-clear" ui-sref="selectedRestaurants">Hae</button>
       <ion-item ng-repeat="restaurant in restaurants.data | orderBy:['areacode','name']">
         <div class="restaurant">
-          <label for="showRestaurant" ui-sref='restaurant({restaurantId:restaurant.id})'>
+          <div class="resName" ui-sref='restaurant({restaurantId:restaurant.id})'>
             <span id="showRestaurant">{{restaurant.name}}</span>
-          </label>
-          <div class="checkbox-light">
+          </div>
+          <div>
             <input class="checkbox" type="checkbox" ng-model="storage.restaurant[restaurant.id]" />
           </div>
         </div>

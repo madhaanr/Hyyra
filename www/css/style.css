@@ -3,8 +3,7 @@
     background-color: #4E994E;
     color: #f4f4f4;
 }
-
-.restaurant label {
+.restaurant .resName {
     display: block;
     float: left;
     padding-right: 5px;
@@ -13,10 +12,10 @@
 .restaurant input {
     float: right;
 }
-.restaurant label span {
+.restaurant .resName span {
     vertical-align: left;
 }
-.restaurant label button {
+.restaurant .resName button {
     min-width:8em;
     max-width: 15em;
     display: inline-block;
