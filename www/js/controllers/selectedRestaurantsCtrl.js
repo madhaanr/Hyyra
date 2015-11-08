@@ -4,13 +4,14 @@
         .module('Hyyra')
         .controller('SelectedRestaurantsController', SelectedRestaurantsController);
 
-    SelectedRestaurantsController.$inject = ['$scope','cafeApiService'];
+    SelectedRestaurantsController.$inject = ['$scope', 'cafeApiService'];
 
-    function SelectedRestaurantsController($scope,cafeApiService) {
-         var promise=cafeApiService.getSelectedRestaurants();
-         promise.then(function(restaurants) {
+    function SelectedRestaurantsController($scope, cafeApiService) {
+        $scope.datekk = Date.now();
+        var promise = cafeApiService.getSelectedRestaurants();
+        promise.then(function (restaurants) {
             console.log(restaurants);
-            $scope.restaurants=restaurants;
-         });
+            $scope.restaurants = restaurants;
+        });
     }
 })();

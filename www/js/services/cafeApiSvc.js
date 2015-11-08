@@ -33,6 +33,9 @@
 				if (storageService.storedRestaurants().restaurant[id]) {
 					paths.push($http.get(basePath + 'restaurant/' + id));
 				}
+				else {
+					storageService.removeRestaurant(id);
+				}
 			}
 			return $q.all(paths).then(function (response) {
 				return response;

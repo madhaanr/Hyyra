@@ -1,13 +1,15 @@
 <ion-view view-title="Ravintolat">
   <ion-content>
     <ion-list>
-       <button class="button button-clear pull-center" ui-sref="selectedRestaurants">Hae</button>
+      <button class="button button-clear" ui-sref="selectedRestaurants">Hae</button>
       <ion-item ng-repeat="restaurant in restaurants.data | orderBy:['areacode','name']">
         <div class="restaurant">
           <label for="showRestaurant" ui-sref='restaurant({restaurantId:restaurant.id})'>
-            <span id="showRestaurant"><button>{{restaurant.name}}</button></span>
+            <span id="showRestaurant">{{restaurant.name}}</span>
           </label>
-          <input type="checkbox" ng-model="storage.restaurant[restaurant.id]" />
+          <div class="checkbox-light">
+            <input class="checkbox" type="checkbox" ng-model="storage.restaurant[restaurant.id]" />
+          </div>
         </div>
       </ion-item>
     </ion-list>

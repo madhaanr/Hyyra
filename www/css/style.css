@@ -1,4 +1,4 @@
-/* Empty. Add your own CSS if you like */
+/* Add your own CSS if you like */
 .bar.bar-dark {
     background-color: #4E994E;
     color: #f4f4f4;
@@ -22,4 +22,9 @@
     display: inline-block;
     text-align: center;
     vertical-align: top;
+}
+h5 {
+    margin-left: 0.7em;
+    font-weight: normal;
+    font-size: 1.2em;
 }

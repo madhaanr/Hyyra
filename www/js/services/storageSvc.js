@@ -9,11 +9,15 @@
 	function storageService($localStorage) {
 
 		return {
-			storedRestaurants: storedRestaurants
+			storedRestaurants: storedRestaurants,
+			removeRestaurant: removeRestaurant
 		}
 
 		function storedRestaurants() {
 			return $localStorage;
+		}
+		function removeRestaurant(id) {
+			delete $localStorage.restaurant[id];
 		}
 	}
 })();
