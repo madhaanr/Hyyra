@@ -1,7 +1,6 @@
 (function () {
   'use strict';
-  angular
-    .module('Hyyra', ['ionic', 'ngStorage'])
+  angular.module('Hyyra', ['ionic', 'ngStorage'])
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -20,22 +19,12 @@
         .state('restaurants', {
           url: '/',
           controller: 'RestaurantsController',
-          templateUrl: 'templates/restaurants.html',
-          resolve: {
-            restaurants: function (cafeApiService) {
-              return cafeApiService.getRestaurants();
-            }
-          }
+          templateUrl: 'templates/restaurants.html'
         })
         .state('restaurant', {
           url: '/restaurant/:restaurantId',
           controller: 'RestaurantController',
-          templateUrl: 'templates/restaurant.html',
-          resolve: {
-            restaurant: function ($stateParams, cafeApiService) {
-              return cafeApiService.getRestaurant($stateParams.restaurantId);
-            }
-          }
+          templateUrl: 'templates/restaurant.html'
         })
         .state('selectedRestaurants', {
           url: '/restaurants/selected',

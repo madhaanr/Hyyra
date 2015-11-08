@@ -1,14 +1,12 @@
 (function () {
 	'use strict';
-	angular
-		.module('Hyyra')
-		.factory('cafeApiService', cafeApiService);
+	angular.module('Hyyra')
+		   .factory('cafeApiService', cafeApiService);
 
 	cafeApiService.$inject = ['$http', '$q', 'storageService'];
 
 	function cafeApiService($http, $q, storageService) {
 		var basePath = "http://messi.hyyravintolat.fi/publicapi/";
-
 		return {
 			getRestaurants: getRestaurants,
 			getRestaurant: getRestaurant,
