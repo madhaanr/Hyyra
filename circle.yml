@@ -1,0 +1,3 @@
+test:
+  override:
+   - javascript ./tests/karma start unit-tests.conf.js
