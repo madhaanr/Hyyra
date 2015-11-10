@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('Hyyra', ['ionic', 'ngStorage'])
+  angular.module('Hyyra', ['ionic', 'ngStorage','ngMock'])
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
